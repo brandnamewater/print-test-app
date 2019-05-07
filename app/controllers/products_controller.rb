@@ -15,7 +15,7 @@ class ProductsController < ShopifyApp::AuthenticatedController
   def create
     shop = ShopifyAPI::Shop.current
 
-    @product 
+    @product
     @product = ShopifyAPI::Product.new(
       :title => product_params[:title],
       :product_type => product_params[:product_type],
@@ -23,6 +23,8 @@ class ProductsController < ShopifyApp::AuthenticatedController
     )
     if @product.save
       # success! probably redirect_to some page that lists the user's products
+      redirect_to '/'
+      flash[:notice] = "saved"
     else
       flash[:error] = 'Unable to create product'
       render :new
