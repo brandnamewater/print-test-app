@@ -26,3 +26,30 @@
 <% else %>
   <p>This app has not created any webhooks for this Shop. Add webhooks to your ShopifyApp initializer if you need webhooks</p>
 <% end %>
+
+<form method="POST" action="<%= "https://#{@shop_session.url}/admin/api/2019-04/products.json" %>" data-shopify-app-submit="">
+  <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+  <p>
+    <label>Name:</label>
+    <input type="text" name="title"/>
+  </p>
+  <p>
+    <label>Body</label>
+    <input type="text" name="body_html"/>
+  </p>
+  <p>
+    <label>Vendor:</label>
+    <input type="text" name="vendor"/>
+  </p>
+  <p>
+    <label>Product Type:</label>
+    <input type="text" name="product_type"/>
+  </p>
+  <p>
+    <label>Tags:</label>
+    <input type="text" name="tags"/>
+  </p>
+
+  <input type="submit">
+
+</form>
