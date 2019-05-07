@@ -27,7 +27,7 @@
   <p>This app has not created any webhooks for this Shop. Add webhooks to your ShopifyApp initializer if you need webhooks</p>
 <% end %>
 
-<form method="POST" action="<%= "https://#{@shop_session.url}/admin/api/products.json" %>" data-shopify-app-submit="">
+<form method="POST" action="/admin/api/products.json" data-shopify-app-submit="">
   <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
   <p>
     <label>Name:</label>
