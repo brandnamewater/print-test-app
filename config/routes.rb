@@ -10,7 +10,6 @@
 
 
 
-    resources :products
 
 
 
@@ -46,5 +45,7 @@
       get 'auth/shopify/callback' => :callback
       get 'logout' => :destroy, :as => :logout
   end
-root :to => 'home#index'
+  root :to => 'home#index'
+  resources :products
+
 end
