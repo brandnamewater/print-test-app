@@ -49,7 +49,13 @@
     <label>Tags:</label>
     <input type="text" name="tags"/>
   </p>
-
   <input type="submit">
-
 </form>
+
+
+<%= form_for @new_product do |f| %>
+  <%= f.text_field :title %>
+  <%= f.text_field :vendor %>
+  <%= f.text_field :product_type %>
+  <%= f.submit %>
+<% end %>
