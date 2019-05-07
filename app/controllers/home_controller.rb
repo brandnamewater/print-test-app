@@ -11,7 +11,7 @@ class HomeController < ShopifyApp::AuthenticatedController
 
     # @new_product = "https://#{@shop_session.url}/admin/api/products.json"
 
-    ShopifyAPI::Product.new(
+    @new_product = ShopifyAPI::Product.new(
       :title => :title,
       :vendor => :vendor,
       :product_type => :product_type,
