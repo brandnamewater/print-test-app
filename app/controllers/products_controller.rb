@@ -15,9 +15,9 @@ class ProductsController < ShopifyApp::AuthenticatedController
 
     @product = Product.new(product_params)
     new_product = ShopifyAPI::Product.new(
-      :title => :title,
-      :product_type => :product_type,
-      :vendor => :vendor,
+      :title => product_params[:title],
+      :product_type => product_params[:product_type],
+      :vendor => product_params[:vendor],
     )
     if @product.save
       # success! probably redirect_to some page that lists the user's products
