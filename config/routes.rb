@@ -35,8 +35,6 @@
   get 'order_old' => "home#order_old"
   get 'fulfill' => "fulfillment#fulfill"
 
-  post '/' => "home#index"
-
   # post 'shopify_api/products'
 
 

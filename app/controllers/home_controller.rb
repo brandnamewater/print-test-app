@@ -9,12 +9,12 @@ class HomeController < ShopifyApp::AuthenticatedController
     # new_product.vendor = "Burton"
     # new_product.save
 
-    @new_product = "https://#{@shop_session.url}/admin/api/products.json"
+    # @new_product = "https://#{@shop_session.url}/admin/api/products.json"
 
-    # ShopifyAPI::Product.new(
-    #   :title => :title,
-    #   :vendor => :vendor,
-    #   :product_type => :product_type,
-    # )
+    ShopifyAPI::Product.new(
+      :title => :title,
+      :vendor => :vendor,
+      :product_type => :product_type,
+    )
   end
 end
