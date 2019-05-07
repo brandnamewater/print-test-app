@@ -13,6 +13,7 @@ Rails.application.routes.draw do
 
 
 
+  resources :orders
   mount ShopifyApp::Engine, at: '/'
 
   # post 'fulfillment/fulfil_order'
@@ -46,6 +47,8 @@ Rails.application.routes.draw do
       get 'logout' => :destroy, :as => :logout
   end
   root :to => 'home#index'
+  resources :orders
+
   resources :store_products
 
   resources :products
