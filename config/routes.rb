@@ -13,7 +13,6 @@ Rails.application.routes.draw do
 
 
 
-  resources :store_products
   mount ShopifyApp::Engine, at: '/'
 
   # post 'fulfillment/fulfil_order'
