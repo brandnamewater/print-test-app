@@ -10,7 +10,7 @@ class HomeController < ShopifyApp::AuthenticatedController
     # new_product.save
 
 
-    ShopifyAPI::Product.new(
+    @new_product = ShopifyAPI::Product.new(
       :title => :title,
       :vendor => :vendor,
       :product_type => :product_type,
