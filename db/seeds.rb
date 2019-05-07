@@ -5,3 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+t_shirts = Category.find_or_create_by(name: 'T-shirts')
+hoodies = Category.find_or_create_by(name: 'Hoodies')
+
+gildan_hoodie = Style.find_or_create_by(name: 'Gildan Hoodie')
+gildan_tee = Style.find_or_create_by(name: 'Gildan Tee')
+champion_hoodie = Style.find_or_create_by(name: 'Champion Hoodie')
