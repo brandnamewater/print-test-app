@@ -43,12 +43,13 @@ class StoreProductsController < ShopifyApp::AuthenticatedController
     # end
     shop = ShopifyAPI::Shop.current
 
-    @product = Product.find_by(
-      style: @user_product.style_id,
-      size:     @user_product.size,
-      color:    @user_product.color,
-      country:  @user_product.country
-    )
+    # @product = Product.find_by(
+    #   style: @user_product.style_id,
+    #   size:     @user_product.size,
+    #   color:    @user_product.color,
+    #   country:  @user_product.country
+    # )
+    @product = Product.find(params[:id])
 
     # @store_product = ShopifyAPI::Product.new(
     #   :title => product_params[:title],
