@@ -32,6 +32,8 @@ class StoreProductsController < ShopifyApp::AuthenticatedController
   # POST /store_products
   # POST /store_products.json
   def create
+    @products = Product.all
+
     shop = ShopifyAPI::Shop.current
 
     @in_store_products = ShopifyAPI::Product.find(:all, params: { limit: 10 })
