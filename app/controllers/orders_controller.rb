@@ -5,7 +5,7 @@ class OrdersController < ApplicationController
   # GET /orders.json
   def index
     @orders = Order.all
-    @store_orders = ShopifyAPI::Order.find(:all)
+    @store_orders = ShopifyAPI::Order.find(:all, params: { limit: 10 })
   end
 
   # GET /orders/1

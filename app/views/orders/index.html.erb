@@ -8,7 +8,7 @@
   </thead>
 
   <tbody>
-    <% @orders.each do |order| %>
+    <% @store_orders.each do |order| %>
       <tr>
         <td><%= link_to 'Show', order %></td>
         <td><%= link_to 'Edit', edit_order_path(order) %></td>
