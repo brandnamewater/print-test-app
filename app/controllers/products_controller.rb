@@ -32,7 +32,6 @@ class ProductsController < ShopifyApp::AuthenticatedController
   #   params.require(:product).permit(:title, :product_type, :vendor)
   # end
 
-end
 
 def index
   @products = Product.all
