@@ -7,14 +7,14 @@ class Product < ApplicationRecord
 
 
 
-  belongs_to :category, foreign_key: :category_id, class_name: "Category"
-  belongs_to :style, foreign_key: :style_id, class_name: "Style"
+  # belongs_to :category, foreign_key: :category_id, class_name: "Category"
+  # belongs_to :style, foreign_key: :style_id, class_name: "Style"
+  #
+  #
+  # attr_accessor :new_category_name
+  # before_save :create_category_from_name
 
-
-  attr_accessor :new_category_name
-  before_save :create_category_from_name
-
-  has_many :orders
+  # has_many :orders
 
   # has_one :vendor
 
@@ -38,6 +38,6 @@ class Product < ApplicationRecord
   # has_many :user_products
 
   # belongs_to :vendor_products
-  has_one :vendor_product
+  # has_one :vendor_product
 
 end
