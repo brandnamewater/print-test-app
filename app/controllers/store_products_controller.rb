@@ -30,6 +30,8 @@ class StoreProductsController < ShopifyApp::AuthenticatedController
   # POST /store_products
   # POST /store_products.json
   def create
+    @in_store_products = ShopifyAPI::Product.find(:all, params: { limit: 10 })
+
     @store_product = StoreProduct.new(store_product_params)
     #
     # respond_to do |format|
@@ -59,7 +61,7 @@ class StoreProductsController < ShopifyApp::AuthenticatedController
     #   :vendor => product_params[:vendor],
     # )
 
-    # @in_store_product = ShopifyAPI::Product.find(params[:id])
+    @in_store_product = ShopifyAPI::Product.find(params[:id])
 
     @store_product.product_id = @product.id
     @store_product.store_product_id = @in_store_product.id
