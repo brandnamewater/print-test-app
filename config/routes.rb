@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :store_products
 #   root :to => 'home#orders'
 #   mount ShopifyApp::Engine, at: '/'
 #
@@ -48,6 +47,8 @@ Rails.application.routes.draw do
       get 'logout' => :destroy, :as => :logout
   end
   root :to => 'home#index'
+  resources :store_products
+
   resources :products
 
 end
