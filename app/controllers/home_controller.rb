@@ -17,4 +17,14 @@ class HomeController < ShopifyApp::AuthenticatedController
       :product_type => :product_type,
     )
   end
+
+  def create
+    @new_product = ShopifyAPI::Product.new(
+      :title => :title,
+      :vendor => :vendor,
+      :product_type => :product_type,
+    )
+
+
+  end
 end
