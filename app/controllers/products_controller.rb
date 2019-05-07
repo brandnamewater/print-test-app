@@ -1,5 +1,6 @@
 # class ProductsController < ApplicationController
 class ProductsController < ShopifyApp::AuthenticatedController
+  # before_action :set_product, only: [:show, :edit, :update, :destroy]
 
 
   # def new
