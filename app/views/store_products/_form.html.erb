@@ -1,3 +1,18 @@
+<% content_for :javascript do %>
+  <script type="text/javascript">
+    ShopifyApp.ready(function(){
+      ShopifyApp.Bar.initialize({ title: "New Store Product" });
+    });
+  </script>
+<% end %>
+<script type="text/javascript">
+  ShopifyApp.init({
+    apiKey: "<%= ShopifyApp.configuration.api_key %>",
+    shopOrigin: "<%= "https://#{ @shop_session.url }" if @shop_session %>",
+    debug: <%= Rails.env.development? ? 'true' : 'false' %>,
+    forceRedirect: true
+  });
+</script>
 <%= form_with(model: store_product, local: true) do |form| %>
   <% if store_product.errors.any? %>
     <div id="error_explanation">
@@ -11,7 +26,7 @@
     </div>
   <% end %>
 
-  <%= form.collection_select :store_product_id, @in_store_products, :id, :name %>
+  <%= form.collection_select :store_product_id, @in_store_products, :id, :title %>
 
 
   <div class="actions">
