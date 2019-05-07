@@ -1,5 +1,4 @@
 # Rails.application.routes.draw do
-  root :to => 'home#index'
 #   root :to => 'home#orders'
 #   mount ShopifyApp::Engine, at: '/'
 #
@@ -11,7 +10,6 @@
 
 
 
-  root :to => 'home#index'
     resources :products
 
 
