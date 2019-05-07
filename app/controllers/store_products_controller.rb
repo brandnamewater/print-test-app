@@ -20,6 +20,7 @@ class StoreProductsController < ShopifyApp::AuthenticatedController
     @in_store_products = ShopifyAPI::Product.find(:all, params: { limit: 10 })
 
     @store_product = StoreProduct.new
+    @products = Product.all
   end
 
   # GET /store_products/1/edit
