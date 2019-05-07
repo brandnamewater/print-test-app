@@ -17,6 +17,8 @@ class StoreProductsController < ShopifyApp::AuthenticatedController
 
   # GET /store_products/new
   def new
+    shop = ShopifyAPI::Shop.current
+
     @in_store_products = ShopifyAPI::Product.find(:all, params: { limit: 10 })
 
     @store_product = StoreProduct.new

@@ -13,7 +13,7 @@
     forceRedirect: true
   });
 </script>
-<%= form_with(model: store_product, local: true) do |form| %>
+<%= form_for(@store_product) do |form| %>
   <% if store_product.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(store_product.errors.count, "error") %> prohibited this store_product from being saved:</h2>
