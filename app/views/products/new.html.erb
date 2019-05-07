@@ -1,6 +1,6 @@
 <h2>Create Product</h2>
 
-  <%= form_for(@product, path: products_path) do |form| %>
+  <%= form_for(@product) do |form| %>
     <%= form.text_field :title %>
     <%= form.text_field :product_type %>
     <%= form.text_field :vendor %>
