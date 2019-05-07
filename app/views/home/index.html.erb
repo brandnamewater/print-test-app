@@ -27,32 +27,30 @@
   <p>This app has not created any webhooks for this Shop. Add webhooks to your ShopifyApp initializer if you need webhooks</p>
 <% end %>
 
-<form method="POST" action="<%= "https://#{@shop_session.url}/admin/api/products.json" %>" data-shopify-app-submit="">
-  <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
-  <p>
-    <label>Name:</label>
-    <input type="text" name="title"/>
-  </p>
-  <p>
-    <label>Body</label>
-    <input type="text" name="body_html"/>
-  </p>
-  <p>
-    <label>Vendor:</label>
-    <input type="text" name="vendor"/>
-  </p>
-  <p>
-    <label>Product Type:</label>
-    <input type="text" name="product_type"/>
-  </p>
-  <p>
-    <label>Tags:</label>
-    <input type="text" name="tags"/>
-  </p>
+<h2>Store Products List</h2>
 
-  <input type="submit">
+  <table class="table">
+    <thead>
+      <tr>
+        <th class="center">id</th>
+        <th class="center">Product id</th>
+        <th class="center">Title</th>
+        <th class="center">Store Product ID</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @store_products.each do |sp| %>
+        <tr>
+          <td class="center"><%= sp.id %></td>
+          <td class="center"><%= sp.product_id %></td>
+          <td class="center"><%= user.title %></td>
+          <td class="center"><%= user.store_product_id %></td>
+        </tr>
+    </tbody>
+    <% end %>
+  </table>
 
-</form>
+
 
 <%= link_to "NP Products", new_product_path %>
 
