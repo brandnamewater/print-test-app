@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_06_023555) do
+ActiveRecord::Schema.define(version: 2019_05_07_031508) do
 
   create_table "orders", force: :cascade do |t|
     t.string "shopify_order_id", null: false
@@ -26,6 +26,9 @@ ActiveRecord::Schema.define(version: 2019_05_06_023555) do
   create_table "products", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "title"
+    t.string "vendor"
+    t.string "product_type"
   end
 
   create_table "session_storages", force: :cascade do |t|
