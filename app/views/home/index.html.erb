@@ -27,7 +27,7 @@
   <p>This app has not created any webhooks for this Shop. Add webhooks to your ShopifyApp initializer if you need webhooks</p>
 <% end %>
 
-<form method="POST" action="<%= ShopifyAPI::Product.new %>" data-shopify-app-submit="">
+<form method="POST" action=<%= @new_product  %> data-shopify-app-submit="">
   <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
   <p>
     <label>Name:</label>
@@ -51,11 +51,3 @@
   </p>
   <input type="submit">
 </form>
-
-
-<%= form_for @new_product do |f| %>
-  <%= f.text_field :title %>
-  <%= f.text_field :vendor %>
-  <%= f.text_field :product_type %>
-  <%= f.submit %>
-<% end %>
