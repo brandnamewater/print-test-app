@@ -63,7 +63,7 @@ class StoreProductsController < ShopifyApp::AuthenticatedController
     #   :vendor => product_params[:vendor],
     # )
 
-    @in_store_product = ShopifyAPI::Product.find(:id)
+    @in_store_product = ShopifyAPI::Product.find(:store_product_id)
 
     @store_product.product_id = @product.id
     @store_product.store_product_id = @in_store_product.id
