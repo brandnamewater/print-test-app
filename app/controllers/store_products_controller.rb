@@ -50,6 +50,8 @@ class StoreProductsController < ShopifyApp::AuthenticatedController
     #   country:  @user_product.country
     # )
     @product = Product.find_by(params[:sku])
+    # @product = Product.find_by(params[:product_id])
+
 
     # @store_product = ShopifyAPI::Product.new(
     #   :title => product_params[:title],
@@ -57,7 +59,7 @@ class StoreProductsController < ShopifyApp::AuthenticatedController
     #   :vendor => product_params[:vendor],
     # )
 
-    @in_store_product = ShopifyAPI::Product.find(params[:id])
+    # @in_store_product = ShopifyAPI::Product.find(params[:id])
 
     @store_product.product_id = @product.id
     @store_product.store_product_id = @in_store_product.id
