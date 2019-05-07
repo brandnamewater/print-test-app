@@ -32,6 +32,8 @@ class StoreProductsController < ShopifyApp::AuthenticatedController
   # POST /store_products
   # POST /store_products.json
   def create
+    shop = ShopifyAPI::Shop.current
+
     @in_store_products = ShopifyAPI::Product.find(:all, params: { limit: 10 })
 
     @store_product = StoreProduct.new(store_product_params)
@@ -45,7 +47,6 @@ class StoreProductsController < ShopifyApp::AuthenticatedController
     #     format.json { render json: @store_product.errors, status: :unprocessable_entity }
     #   end
     # end
-    shop = ShopifyAPI::Shop.current
 
     # @product = Product.find_by(
     #   style: @user_product.style_id,
@@ -63,7 +64,7 @@ class StoreProductsController < ShopifyApp::AuthenticatedController
     #   :vendor => product_params[:vendor],
     # )
 
-    @in_store_product = ShopifyAPI::Product.find(:store_product_id)
+    # @in_store_product = ShopifyAPI::Product.find(:store_product_id)
 
     @store_product.product_id = @product.id
     @store_product.store_product_id = @in_store_product.id
