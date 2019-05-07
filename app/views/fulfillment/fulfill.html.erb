@@ -1,0 +1,17 @@
+<form method="POST" action="<%= "https://#{@shop_session.url}/orders/#{order_id}/fulfillments.json" %>" data-shopify-app-submit="">
+  <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+  <p>
+    <label>Name:</label>
+    <input type="text" name="name"/>
+  </p>
+
+  <p>
+    <label>Colour:</label>
+    <select name="colour">
+      <option>Pink</option>
+      <option>Rainbow</option>
+      <option>Purple</option>
+    </select>
+  </p>
+
+</form>
