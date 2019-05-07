@@ -1,4 +1,6 @@
-class ProductsController < ApplicationController
+# class ProductsController < ApplicationController
+class ProductsController < ShopifyApp::AuthenticatedController
+
 
   def new
     shop = ShopifyAPI::Shop.current
