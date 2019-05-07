@@ -60,6 +60,9 @@ end
 # POST /products
 # POST /products.json
 def create
+  @styles = Style.all
+  @categories = Category.all
+
   @product = Product.new(product_params)
   @style = Style.find_by(params[:style_id])
   @category = Category.find_by(params[:category_id])
@@ -83,19 +86,15 @@ end
 # PATCH/PUT /products/1
 # PATCH/PUT /products/1.json
 def update
-  # respond_to do |format|
+  respond_to do |format|
     if @product.update(product_params)
-      # format.html { redirect_to @product, notice: 'Product was successfully updated.' }
-      # format.json { render :show, status: :ok, location: @product }
-      redirect_to '/'
-      flash[:notice] = "saved"
+      format.html { redirect_to @product, notice: 'Product was successfully updated.' }
+      format.json { render :show, status: :ok, location: @product }
     else
-      # format.html { render :edit }
-      # format.json { render json: @product.errors, status: :unprocessable_entity }
-      flash[:error] = 'Unable to create product'
-      render :new
+      format.html { render :edit }
+      format.json { render json: @product.errors, status: :unprocessable_entity }
     end
-  # end
+  end
 end
 
 # DELETE /products/1
