@@ -12,20 +12,6 @@
     <% end %>
 
 
-  Using Join Table
-    <%# <%= form.collection_check_boxes(:category_ids, Category.all, :id, :name, :multiple => true) do |c| %> %>
-      <%# <%= c.label class:"form-check-inline" do %> %>
-        <%# <%= c.check_box + c.text %> %>
-      <%# <% end %> %>
-    <%# <% end %> %>
-  |
-    <%# <%= form.collection_check_boxes(:style_ids, Style.all, :id, :name, :multiple => true) do |c| %> %>
-      <%# <%= c.label class:"form-check-inline" do %> %>
-        <%# <%= c.check_box + c.text %> %>
-      <%# <% end %> %>
-    <%# <% end %> %>
-
-
   <p> No join Table</p>
     <%= form.collection_select :category_id, @categories, :id, :name %>
   <br>
@@ -40,7 +26,7 @@
 
     <%= form.select :size, [["S"], ["M"], ["L"], ["XL"], ["2XL"]] %>
   <br>
-  
+
 
     country <%= form.text_field :country %>
 

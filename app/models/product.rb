@@ -7,8 +7,8 @@ class Product < ApplicationRecord
 
 
 
-  # belongs_to :category, foreign_key: :category_id, class_name: "Category"
-  # belongs_to :style, foreign_key: :style_id, class_name: "Style"
+  belongs_to :category, foreign_key: :category_id, class_name: "Category"
+  belongs_to :style, foreign_key: :style_id, class_name: "Style"
   #
   #
   # attr_accessor :new_category_name
