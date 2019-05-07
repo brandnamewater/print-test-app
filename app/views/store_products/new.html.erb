@@ -2,4 +2,6 @@
 
 <%= render 'form', store_product: @store_product %>
 
-<%= link_to 'Back', store_products_path %>
+<%= @products.each do |product| %>
+<%= product.title %>
+<% end %>
