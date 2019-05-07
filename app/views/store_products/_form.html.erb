@@ -1,0 +1,20 @@
+<%= form_with(model: store_product, local: true) do |form| %>
+  <% if store_product.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(store_product.errors.count, "error") %> prohibited this store_product from being saved:</h2>
+
+      <ul>
+      <% store_product.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= form.collection_select :store_product_id, @in_store_products, :id, :name %>
+
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

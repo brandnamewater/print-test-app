@@ -15,7 +15,6 @@ class ProductsController < ShopifyApp::AuthenticatedController
   def create
     shop = ShopifyAPI::Shop.current
 
-    @product
     @product = ShopifyAPI::Product.new(
       :title => product_params[:title],
       :product_type => product_params[:product_type],

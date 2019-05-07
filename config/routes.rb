@@ -1,4 +1,5 @@
-# Rails.application.routes.draw do
+Rails.application.routes.draw do
+  resources :store_products
 #   root :to => 'home#orders'
 #   mount ShopifyApp::Engine, at: '/'
 #
@@ -6,13 +7,14 @@
 #   get 'orders' => 'home#orders'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  Rails.application.routes.draw do
+  # Rails.application.routes.draw do
 
 
 
 
 
 
+  resources :store_products
   mount ShopifyApp::Engine, at: '/'
 
   # post 'fulfillment/fulfil_order'
