@@ -1,3 +1,10 @@
+<% content_for :javascript do %>
+  <script type="text/javascript">
+    ShopifyApp.ready(function(){
+      ShopifyApp.Bar.initialize({ title: "Home" });
+    });
+  </script>
+<% end %>
 <h2>Create Product</h2>
 
   <%= form_for(@product) do |form| %>

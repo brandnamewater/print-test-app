@@ -1,5 +1,5 @@
-class ProductsController < ApplicationController
-# class ProductsController < ShopifyApp::AuthenticatedController
+# class ProductsController < ApplicationController
+class ProductsController < ShopifyApp::AuthenticatedController
 
 
   def new
