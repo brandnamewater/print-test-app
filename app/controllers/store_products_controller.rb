@@ -67,7 +67,7 @@ class StoreProductsController < ShopifyApp::AuthenticatedController
     # @in_store_product = ShopifyAPI::Product.find(:store_product_id)
 
     @store_product.product_id = @product.id
-    @store_product.store_product_id = @in_store_product.id
+    # @store_product.store_product_id = @in_store_product.id
 
     if @store_product.save
       # success! probably redirect_to some page that lists the user's products
