@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_07_065036) do
+ActiveRecord::Schema.define(version: 2019_05_07_071458) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,6 +38,13 @@ ActiveRecord::Schema.define(version: 2019_05_07_065036) do
     t.string "title"
     t.string "vendor"
     t.string "product_type"
+    t.string "sku"
+    t.string "country"
+    t.string "color"
+    t.string "size"
+    t.integer "style_id"
+    t.string "price"
+    t.integer "category_id"
   end
 
   create_table "session_storages", force: :cascade do |t|

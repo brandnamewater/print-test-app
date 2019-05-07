@@ -45,15 +45,15 @@ end
 # GET /products/new
 def new
   @product = Product.new
-  # @styles = Style.all
-  # @categories = Category.all
+  @styles = Style.all
+  @categories = Category.all
 end
 
 # GET /products/1/edit
 def edit
-  # @styles = Style.all
-  #
-  # @categories = Category.all
+  @styles = Style.all
+
+  @categories = Category.all
 
 end
 
@@ -61,8 +61,8 @@ end
 # POST /products.json
 def create
   @product = Product.new(product_params)
-  # @style = Style.find_by(params[:style_id])
-  # @category = Category.find_by(params[:category_id])
+  @style = Style.find_by(params[:style_id])
+  @category = Category.find_by(params[:category_id])
 
   @product.style_id = @style.id
   @product.category_id = @category.id
