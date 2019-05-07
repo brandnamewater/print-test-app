@@ -69,12 +69,13 @@ def create
 
 
 
+  respond_to do |format|
     if @product.save
-      redirect_to '/'
-      flash[:notice] = "saved"
-
+      format.html { redirect_to @product, notice: 'Product was successfully created.' }
+      format.json { render :show, status: :created, location: @product }
     else
-      render :new
+      format.html { render :new }
+      format.json { render json: @product.errors, status: :unprocessable_entity }
     end
   end
 end
@@ -82,15 +83,19 @@ end
 # PATCH/PUT /products/1
 # PATCH/PUT /products/1.json
 def update
-  respond_to do |format|
+  # respond_to do |format|
     if @product.update(product_params)
-      format.html { redirect_to @product, notice: 'Product was successfully updated.' }
-      format.json { render :show, status: :ok, location: @product }
+      # format.html { redirect_to @product, notice: 'Product was successfully updated.' }
+      # format.json { render :show, status: :ok, location: @product }
+      redirect_to '/'
+      flash[:notice] = "saved"
     else
-      format.html { render :edit }
-      format.json { render json: @product.errors, status: :unprocessable_entity }
+      # format.html { render :edit }
+      # format.json { render json: @product.errors, status: :unprocessable_entity }
+      flash[:error] = 'Unable to create product'
+      render :new
     end
-  end
+  # end
 end
 
 # DELETE /products/1
