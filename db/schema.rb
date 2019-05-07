@@ -12,11 +12,14 @@
 
 ActiveRecord::Schema.define(version: 2019_05_07_031508) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "orders", force: :cascade do |t|
     t.string "shopify_order_id", null: false
     t.string "shopify_order_name", default: ""
     t.datetime "shopify_order_created_at"
-    t.integer "shop_id"
+    t.bigint "shop_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["shop_id"], name: "index_orders_on_shop_id"
