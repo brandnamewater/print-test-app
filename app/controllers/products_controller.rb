@@ -3,6 +3,8 @@ class ProductsController < ShopifyApp::AuthenticatedController
 
 
   def new
+    @products = ShopifyAPI::Product.find(:all, params: { limit: 10 })
+
     shop = ShopifyAPI::Shop.current
 
     @product = Product.new

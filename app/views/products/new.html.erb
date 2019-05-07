@@ -15,9 +15,16 @@
 </script>
 <h2>Create Product</h2>
 
-  <%= form_for(@product), remote: true do |form| %>
+  <%= form_for(@product) remote: true do |form| %>
     <%= form.text_field :title %>
     <%= form.text_field :product_type %>
     <%= form.text_field :vendor %>
   <%= form.submit %>
   <% end %>
+
+
+  <ul>
+    <% @products.each do |product| %>
+      <li><%= link_to product.title, "https://#{@shop_session.url}/admin/products/#{product.id}", target: "_top" %></li>
+    <% end %>
+  </ul>
