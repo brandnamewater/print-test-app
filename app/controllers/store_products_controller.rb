@@ -53,7 +53,7 @@ class StoreProductsController < ShopifyApp::AuthenticatedController
     #   color:    @user_product.color,
     #   country:  @user_product.country
     # )
-    @product = Product.find_by(params[:sku])
+    @product = Product.find_by(params[:product_id])
     # @product = Product.find_by(params[:product_id])
 
 
