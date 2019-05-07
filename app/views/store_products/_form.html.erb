@@ -28,7 +28,7 @@
 
   <%= form.collection_select :store_product_id, @in_store_products, :id, :title %>
 
-  <%= form.collection_select
+  <%= form.collection_select :product_id, @products, :id, :name %>
 
 
   <div class="actions">
