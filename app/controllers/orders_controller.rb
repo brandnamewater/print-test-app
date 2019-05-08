@@ -8,7 +8,7 @@ class OrdersController < ShopifyApp::AuthenticatedController
     @store_orders = ShopifyAPI::Order.find(:all)
 
     @store_products = StoreProduct.all
-    @match_store_orders = @store_orders.where(id: @store_products.each {|store_product| store_products.store_product_id})
+    @match_store_orders = @store_orders.where(id: @store_products.each {|store_product| store_product.store_product_id})
   end
 
   # GET /orders/1
