@@ -5,10 +5,11 @@ class OrdersController < ShopifyApp::AuthenticatedController
   # GET /orders.json
   def index
     @orders = Order.all
-    @store_orders = ShopifyAPI::Order.find(:all)
-
     @store_products = StoreProduct.all
-    @match_store_orders = @store_orders.where(id: @store_products.each {|store_product| store_product.store_product_id})
+
+    @store_orders = ShopifyAPI::Order.find(:all).where(id: @store_products.each {|store_product| store_product.store_product_id})
+
+    # @match_store_orders = @store_orders.where(id: @store_products.each {|store_product| store_product.store_product_id})
   end
 
   # GET /orders/1
