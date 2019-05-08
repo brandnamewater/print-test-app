@@ -5,3 +5,8 @@
 <%= @products.each do |product| %>
 <%= product.title %>
 <% end %>
+
+<h1> Associated Store Products </h1>
+<%= @store_products.each do |store_product| %>
+<%= store_product.id %>
+<% end %>

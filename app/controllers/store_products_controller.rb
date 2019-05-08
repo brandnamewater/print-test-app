@@ -23,6 +23,9 @@ class StoreProductsController < ShopifyApp::AuthenticatedController
 
     @store_product = StoreProduct.new
     @products = Product.all
+
+    @store_products = StoreProduct.all
+
   end
 
   # GET /store_products/1/edit
