@@ -10,7 +10,7 @@
   <tbody>
     <% @store_orders.each do |order| %>
       <tr>
-        <td><%= order.line_items.product_id %></td>
+        <td><%= order.line_items.product %></td>
       </tr>
     <% end %>
   </tbody>
