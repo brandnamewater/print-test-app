@@ -12,7 +12,7 @@ class OrdersController < ShopifyApp::AuthenticatedController
     @store_orders = ShopifyAPI::Order.all
 
     # @match_store_orders = @store_orders.line_item.where(id: @store_products.each {|store_product| store_product.store_product_id})
-    @match_store_orders = @store_orders.find { |order| order.line_item.id == (@store_products.each {|store_product| store_product.store_product_id}) }
+    @match_store_orders = @store_orders.find { |order| order.line_items.id == (@store_products.each {|store_product| store_product.store_product_id}) }
   end
 
   # GET /orders/1
