@@ -9,9 +9,9 @@ class OrdersController < ShopifyApp::AuthenticatedController
 
     # @store_orders = ShopifyAPI::Order.find(params: {:line_items[:id] => @store_products.each {|store_product| store_product.store_product_id} })
 
-    # @match_store_orders = @store_orders.where(id: @store_products.each {|store_product| store_product.store_product_id})
-    @store_orders = ShopifyAPI::Order.where(line_items.id == @store_products.each {|store_product| store_product.store_product_id} )
+    store_orders = ShopifyAPI::Order.where(line_items.id == @store_products.each {|store_product| store_product.store_product_id} )
 
+    @match_store_orders = store_orders.where(line_items.id: @store_products.each {|store_product| store_product.store_product_id})
 
   end
 
