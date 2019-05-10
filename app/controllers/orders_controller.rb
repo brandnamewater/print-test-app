@@ -18,7 +18,12 @@ class OrdersController < ShopifyApp::AuthenticatedController
     # @match_store_orders = @store_orders.where("line_items --> 'product_id' == '@store_products.each {|store_product| store_product.store_product_id}' ")
 
     @match_store_orders = @store_orders.each { |order| order.line_items.each { |line_item| line_item.where(product_id == @store_products.each {|store_product| store_product.store_product_id} ) } }
-
+    @match_store_orders = @store_orders.each do |order|
+                            order.line_items.each do |line|
+                              @match_orders = line.where(line.product_id == @store_products.each {|store_product| store_product.store_product_id})
+                              # line.product_id
+                            end
+                          end
   end
 
   # GET /orders/1
