@@ -27,7 +27,7 @@
     <% @store_orders.each do |order| %>
       <tr>
         <% order.line_items.each do |line| %>
-        <td><%= line.product_id %></td>
+        <td><%= line.product_id.where(line.product_id == @store_products.each {|store_product| store_product.store_product_id}) %></td>
         <% end %>
       </tr>
     <% end %>
@@ -36,19 +36,3 @@
 
 <br>
 <h1>All Orders That Match Associated Products</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @match_orders_.each do |order| %>
-      <tr>
-        <td><%= order.product_id %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
