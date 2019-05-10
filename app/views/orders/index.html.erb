@@ -8,9 +8,9 @@
   </thead>
 
   <tbody>
-    <% @store_orders.each do |order| %>
+    <% @store_orders.line_items.each do |order| %>
       <tr>
-        <td><%= order.line_items.id %></td>
+        <td><%= order.id %></td>
       </tr>
     <% end %>
   </tbody>
