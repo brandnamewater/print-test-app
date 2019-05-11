@@ -31,9 +31,10 @@
     <% @store_orders.each do |order| %>
       <tr>
         <td><%= order.id %> </td>
+        <td><%= order.line_items.count %>
         <% order.line_items.each do |line| %>
         <%# <%  if @store_products.each {|store_product| store_product.store_product_id == line.product_id } %> %>
-            <td><%= line.product_id if line.product_id == StoreProduct.pluck(:store_product_id) %></td>
+            <td><%= line.product_id if line.product_id == "1965852786737" %></td>
           <%# <% end %> %>
         <% end %>
       </tr>
