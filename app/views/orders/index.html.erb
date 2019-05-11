@@ -40,4 +40,6 @@
   </tbody>
 </table>
 
-<%= @line_items %>
+<% @line_items.each do |l| %>
+<%= l.product_id %>
+<% end %>
