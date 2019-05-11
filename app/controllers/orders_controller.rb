@@ -48,8 +48,8 @@ class OrdersController < ShopifyApp::AuthenticatedController
     #   end
     # end
 
-    @line_items = @store_orders.map { |order| order.line_items }
-    @line_items_ids = @line_items.first.class
+    @line_items = @store_orders.map { |order| order.line_items.first.class }
+    @line_items_ids = @line_items.first
     # @common_ids = @store_product_ids && @line_items_ids
 
 
