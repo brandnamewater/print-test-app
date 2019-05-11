@@ -49,7 +49,7 @@ class OrdersController < ShopifyApp::AuthenticatedController
     # end
 
     line_items = @store_orders.map { |order| order.line_items }.flatten
-    line_items_ids = line_items
+    line_items_ids = line_items.map { |li| li.product_id}
     @common_ids = store_product_ids && line_items_ids
 
     # line_items = @store_orders.map { |order| order.line_items}.flatten
