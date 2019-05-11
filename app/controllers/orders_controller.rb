@@ -40,7 +40,8 @@ class OrdersController < ShopifyApp::AuthenticatedController
       # line_items = order.line_items
       # @line_items_ids = line_items.collect { |li| li.product_id}
 
-    end
+    # end
+    
 
 
 
