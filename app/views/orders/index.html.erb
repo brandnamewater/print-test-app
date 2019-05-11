@@ -40,4 +40,6 @@
   </tbody>
 </table>
 
-<%= @line_items %>
+<% @common_ids.each do |com| %>
+  <%= com %>
+  <% end %>
