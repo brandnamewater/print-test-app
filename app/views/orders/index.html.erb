@@ -33,9 +33,7 @@
         <td><%= order.id %> </td>
         <td><%= order.line_items.count %>
         <% order.line_items.each do |line| %>
-        <%# <%  if @store_products.each {|store_product| store_product.store_product_id == line.product_id } %> %>
-            <td><%= line.product_id %></td>
-          <%# <% end %> %>
+          <td><%= line.product_id %></td>
         <% end %>
       </tr>
     <% end %>
@@ -44,3 +42,4 @@
 <%= @store_product_ids %>
 <%= @line_items_ids %>
 <%= @line_items_ids.count %>
+<%= @line_items.id %>
