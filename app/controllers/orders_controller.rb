@@ -52,6 +52,9 @@ class OrdersController < ShopifyApp::AuthenticatedController
     line_items_ids = line_items.map { |li| li.product_id}
     @common_ids = @store_product_ids && line_items_ids
 
+    @products_ = StoreProduct.where(store_product_id: @common_ids)
+
+
     # line_items = @store_orders.map { |order| order.line_items}.flatten
     # line_items.first
 
