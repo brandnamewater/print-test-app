@@ -29,7 +29,7 @@ class OrdersController < ShopifyApp::AuthenticatedController
 
     @store_orders.each do |order|
       order.line_items
-        order.line_items.each do |line|
+        order.line_items.map do |line|
           @line_items_ids = line.product_id
 
 
