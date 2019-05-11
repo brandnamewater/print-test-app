@@ -25,13 +25,13 @@ class OrdersController < ShopifyApp::AuthenticatedController
     #                         end
     #                       end
 
-    store_product_ids = StoreProduct.pluck(:store_product_id)
+    @store_product_ids = StoreProduct.pluck(:store_product_id)
 
     @store_orders.each do |order|
       line_items = order.line_items
       line_items_ids = line_items.each { |li| li.product_id}
 
-      @common_ids = store_product_ids & line_items_ids
+      @common_ids = @store_product_ids && line_items_ids
 
 
     end
