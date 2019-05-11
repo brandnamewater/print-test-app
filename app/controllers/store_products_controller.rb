@@ -74,10 +74,10 @@ class StoreProductsController < ShopifyApp::AuthenticatedController
     @store_product.product_id = @product.id
     # @store_product.store_product_id = @in_store_product.id
 
-    if @store_product.store_product_id.exists?
+    if StoreProduct.where(store_product_id: @store_product.store_product_id).present?
       redirect_to '/'
-      flash[:notice] = "already exists"
-    end 
+      flash[:notice] = "already exists, product already attached"
+    end
 
     if @store_product.save
       # success! probably redirect_to some page that lists the user's products

@@ -32,9 +32,9 @@
       <tr>
         <td><%= order.id %> </td>
         <% order.line_items.each do |line| %>
-          <%# <% if line.product_id == @store_products.each {|store_product| store_product.store_product_id} %> %>
+          <% if line.product_id == @store_products.find {|store_product| store_product.store_product_id} %>
             <td><%= line.product_id %></td>
-          <%# <% end %> %>
+          <% end %>
         <% end %>
       </tr>
     <% end %>
