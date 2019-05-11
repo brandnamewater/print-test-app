@@ -39,6 +39,7 @@
     <% end %>
   </tbody>
 </table>
-<%= @line_products %>
-<%= @store_orders.count %>
-<%= @line_items %>
+
+<% @common_ids.each do |com| %>
+  <%= com %>
+  <% end %>
