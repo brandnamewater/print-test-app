@@ -28,9 +28,9 @@ class OrdersController < ShopifyApp::AuthenticatedController
     @store_product_ids = StoreProduct.pluck(:store_product_id)
 
     @store_orders.each do |order|
-      line_items = order.line_items
-        line_items.each do |li|
-          @line_items_ids = li.product_id
+      order.line_items
+        order.line_items.each do |line|
+          @line_items_ids = line.product_id
 
 
       @common_ids = @store_product_ids && @line_items_ids
