@@ -42,11 +42,13 @@ class OrdersController < ShopifyApp::AuthenticatedController
 
     # end
 
-    @store_orders.each do |order|
-      order.line_items.each do |line|
-        @line_products = line
-      end
-    end
+    # @store_orders.each do |order|
+    #   order.line_items.each do |line|
+    #     @line_products = line
+    #   end
+    # end
+
+    @line_items = @store_orders.map { |order| order.line_items }
 
 
 
