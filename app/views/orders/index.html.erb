@@ -45,4 +45,6 @@
 <%= @line_items %>
 
 
-<%= @common_ids.product_id %>
+<% @common_ids.each do |order| %>
+  <%= order %>
+<% end %>
