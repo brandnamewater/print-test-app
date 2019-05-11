@@ -24,6 +24,6 @@
 <h1>All Orders That Match Associated Products</h1>
 <% @common_ids.each do |order| %>
   <tr>
-    <td><%= order %></td>
+    <td><%= order.product_id %></td>
   </tr>
 <% end %>
