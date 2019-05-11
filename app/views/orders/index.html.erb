@@ -10,9 +10,7 @@
   <tbody>
     <% @store_orders.each do |order| %>
       <tr>
-        <!-- <td><%= order.line_items %></td> -->
-        <td><%= order.id %></td>
-
+        <td><%= order.line_items %></td>
       </tr>
     <% end %>
   </tbody>
@@ -22,7 +20,25 @@
 
 <br>
 <h1>All Orders That Match Associated Products</h1>
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
 
-<br>
+  <tbody>
+    <% @store_orders.each do |order| %>
+      <tr>
+        <td><%= order.id %> </td>
+        <% order.line_items.each do |line| %>
+        <%# <%  if @store_products.each {|store_product| store_product.store_product_id == line.product_id } %> %>
+            <td><%= line.product_id %></td>
+          <%# <% end %> %>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
 <%= @store_product_ids %>
 <%= @line_item_ids %>
