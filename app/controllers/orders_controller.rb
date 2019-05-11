@@ -10,6 +10,7 @@ class OrdersController < ShopifyApp::AuthenticatedController
     # @store_orders = ShopifyAPI::Order.find(params: {:line_items[:id] => @store_products.each {|store_product| store_product.store_product_id} })
 
     @store_orders = ShopifyAPI::Order.all
+    @store_products = @store_orders.find(:all, :params => { :line_items.product_id => StoreProduct.pluck(:store_product_id) })
 
     # @match_store_orders = @store_orders.line_item.where(id: @store_products.each {|store_product| store_product.store_product_id})
     # @match_store_orders = @store_orders.find { |order| order.line_items[0]product_id == (@store_products.each {|store_product| store_product.store_product_id}) }
@@ -48,7 +49,7 @@ class OrdersController < ShopifyApp::AuthenticatedController
     #   end
     # end
 
-    line_items = @store_orders.map { |order| order.line_items }
+    line_items = @store_orders.map { |order| order.line_items }.flatten
     line_items_ids = line_items.map { |li| li.product_id}
     @common_ids = @store_product_ids && line_items_ids
 
