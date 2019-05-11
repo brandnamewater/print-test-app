@@ -5,7 +5,7 @@ class OrdersController < ShopifyApp::AuthenticatedController
   # GET /orders.json
   def index
     @orders = Order.all
-    @store_products = StoreProduct.all
+    # @store_products = StoreProduct.all
 
     # @store_orders = ShopifyAPI::Order.find(params: {:line_items[:id] => @store_products.each {|store_product| store_product.store_product_id} })
 
@@ -24,6 +24,21 @@ class OrdersController < ShopifyApp::AuthenticatedController
     #                           # line.product_id
     #                         end
     #                       end
+
+    store_product_ids = StoreProduct.pluck(:store_product_id)
+
+    @store_orders.each do |order|
+      line_items = order.line_items
+      line_items_ids = line_items.map { |li| li.product_id}
+
+      @common_ids = store_product_ids && line_items_ids
+
+
+    end
+
+
+
+
   end
 
   # GET /orders/1
