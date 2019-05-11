@@ -25,7 +25,7 @@ class OrdersController < ShopifyApp::AuthenticatedController
     #                         end
     #                       end
 
-    @store_product_ids = StoreProduct.pluck(:store_product_id)
+    store_product_ids = StoreProduct.pluck(:store_product_id)
 
     # @store_orders.map do |order|
     #   @line_items = order.line_items
@@ -48,11 +48,12 @@ class OrdersController < ShopifyApp::AuthenticatedController
     #   end
     # end
 
-    @line_items = @store_orders.map { |order| order.line_items.first }
-    @line_items_ids = @line_items.first.class
-    # @common_ids = @store_product_ids && @line_items_ids
+    line_items = @store_orders.map { |order| order.line_items }.flatten
+    line_items_ids = line_items.first
+    @common_ids = store_product_ids && line_items_ids
 
-
+    # line_items = @store_orders.map { |order| order.line_items}.flatten
+    # line_items.first
 
 
 
