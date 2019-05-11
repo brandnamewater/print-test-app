@@ -44,7 +44,7 @@ class OrdersController < ShopifyApp::AuthenticatedController
 
     @store_orders.each do |order|
       order.line_items.each do |line|
-        @line_products = line.each { |l| l.product_id }
+        @line_products = line.map { |l| l.product_id }
       end
     end
 
