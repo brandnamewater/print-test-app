@@ -33,7 +33,7 @@
         <td><%= order.id %> </td>
         <td><%= order.line_items.count %>
         <% order.line_items.each do |line| %>
-          <td><%= line.product_id.where %></td>
+          <td><%= line.product_id %></td>
         <% end %>
       </tr>
     <% end %>
