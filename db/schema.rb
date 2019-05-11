@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_07_071458) do
+ActiveRecord::Schema.define(version: 2019_05_11_211218) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -64,7 +64,7 @@ ActiveRecord::Schema.define(version: 2019_05_07_071458) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "product_id"
-    t.string "store_product_id"
+    t.integer "store_product_id"
   end
 
   create_table "styles", force: :cascade do |t|
