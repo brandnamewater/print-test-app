@@ -27,16 +27,16 @@ class OrdersController < ShopifyApp::AuthenticatedController
 
     @store_product_ids = StoreProduct.pluck(:store_product_id)
 
-    # @store_orders.each do |order|
-    #   line_items = order.line_items
-    #   @line_items_ids = line_items.collect { |li| li.product_id}
-    #
-    #   @common_ids = @store_product_ids && @line_items_ids
-    #
-    #
-    # end
+    @store_orders.each do |order|
+      @line_items = order.line_items
+      @line_items_ids = line_items.collect { |li| li.product_id}
 
-    @line_items = @store_orders.each do |order|
+      @common_ids = @store_product_ids && @line_items_ids
+
+
+    end
+
+    # @line_items = @store_orders.each do |order|
       # line_items = order.line_items
       # @line_items_ids = line_items.collect { |li| li.product_id}
 
