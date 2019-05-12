@@ -7,7 +7,7 @@ ShopifyApp.configure do |config|
   config.after_authenticate_job = false
   config.session_repository = Shop
 
-  config.root_url = '/'
+  # config.root_url = '/'
 
   config.webhooks = [
     {topic: 'orders/create', address: 'https://polar-shelf-74894.herokuapp.com/webhooks/orders_create', format: 'json'},
