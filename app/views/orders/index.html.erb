@@ -57,7 +57,7 @@
     <% @store_products.each do |f| %>
       <tr>
         <% f.line_items.each do |line| %>
-        <% if line.product_id == @store_products.any? {|s| s.store_product_id } %>
+        <% if line.product_id == @store_products_.any? {|s| s.store_product_id } %>
           <td><%= f.id %></td>
           <td><%= line.product_id %></td>
         <% end %>
