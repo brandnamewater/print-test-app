@@ -7,6 +7,7 @@ class OrdersCreateJob < ActiveJob::Base
       line_items.each do |item|
         variant_id = item[:variant_id]
         product_id = item[:product_id]
+      end 
     end
   end
 end
