@@ -58,7 +58,7 @@ NEWNEW
 <br>
 <% @store_products.each do |f| %>
 <%= f.id %>
-<% f.line_items.each do |line| %>
+<% f.line_items.each do |line| if @store_product_ids %>
 <%= line.product_id %>
 <% end %>
 <% end %>
