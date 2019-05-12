@@ -1,4 +1,4 @@
-class WebhooksController < ApplicationController
+class WebhooksController < ShopifyApp::AuthenticatedController
 
   skip_before_action :verify_authenticity_token, raise: false
 
