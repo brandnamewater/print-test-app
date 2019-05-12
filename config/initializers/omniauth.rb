@@ -17,4 +17,5 @@ Rails.application.config.middleware.use OmniAuth::Builder do
            }
 
           callback_path: '/auth/shopify/callback'
+        end 
 end
