@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   # Rails.application.routes.draw do
 
 
+  resources :orders
 
   mount ShopifyApp::Engine, at: '/'
 
