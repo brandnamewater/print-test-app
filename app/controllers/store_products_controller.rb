@@ -1,7 +1,7 @@
 # class StoreProductsController < ApplicationController
 class StoreProductsController < ShopifyApp::AuthenticatedController
 
-  # before_action :set_store_product, only: [:show, :edit, :update, :destroy]
+  before_action :set_store_product, only: [:show, :edit, :update, :destroy]
 
   # GET /store_products
   # GET /store_products.json
