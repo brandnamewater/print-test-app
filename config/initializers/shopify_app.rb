@@ -10,7 +10,7 @@ ShopifyApp.configure do |config|
   config.root_url = '/'
 
   config.webhooks = [
-    {topic: 'orders/update', address: 'https://polar-shelf-74894.herokuapp.com/webhooks/orders_update'}
+    {topic: 'orders/update', address: 'https://polar-shelf-74894.herokuapp.com/webhooks/orders_update', format: 'json'}
   ]
 
   # ShopifyApp::WebhooksManagerJob.perform_now(shop_domain: shopify_domain, shop_token: shopify_token, webhooks: webhooks)
