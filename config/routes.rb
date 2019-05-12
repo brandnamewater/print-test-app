@@ -34,7 +34,7 @@ Rails.application.routes.draw do
 
   # post 'admin/api/products'
 
-  # post '/webhook/create_order', to: 'webook#create_order'
+  post '/webhook/orders_create', to: 'webook#orders_create'
 
   # post 'shopify_api/products'
 
