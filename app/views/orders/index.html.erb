@@ -57,9 +57,10 @@
 NEWNEW
 <br>
 <% @store_products.each do |f| %>
-<%= f.id %>
 <% f.line_items.each do |line| %>
 <% if line.product_id == 1965852786737 %>
+<%= f.id %>
+
 <%= line.product_id %>
 <% end %>
 <% end %>

@@ -10,10 +10,6 @@ Rails.application.routes.draw do
 
 
 
-
-
-
-  resources :orders
   mount ShopifyApp::Engine, at: '/'
 
   # post 'fulfillment/fulfil_order'

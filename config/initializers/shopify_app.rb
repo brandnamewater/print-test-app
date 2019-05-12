@@ -6,4 +6,10 @@ ShopifyApp.configure do |config|
   config.embedded_app = true
   config.after_authenticate_job = false
   config.session_repository = Shop
+
+  config.root_url = '/'
+
+  config.webhooks = [
+    {topic: 'orders/update', address: 'https://polar-shelf-74894.herokuapp.com/webhooks/orders_update'}
+  ]
 end
