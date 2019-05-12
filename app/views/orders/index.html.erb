@@ -45,17 +45,6 @@
 <%= @line_items %>
 
 
-<% @common_ids.each do |order, product| %>
-  <%= order %>
-  <%= product %>
-
-<% end %>
-
-<%= @store_product_ids %>
-<%= @products_ %>
-<br>
-NEWNEW
-<br>
 
 <table>
   <thead>
@@ -68,7 +57,7 @@ NEWNEW
     <% @store_products.each do |f| %>
       <tr>
         <% f.line_items.each do |line| %>
-        <% if line.product_id == 1965852786737 %>
+        <% if line.product_id == @store_products.any? {|s| s.store_product_id } %>
           <td><%= f.id %></td>
           <td><%= line.product_id %></td>
         <% end %>
@@ -77,5 +66,3 @@ NEWNEW
     <% end %>
   </tbody>
 </table>
-
-<%= @store_products_ %>
