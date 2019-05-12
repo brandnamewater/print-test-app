@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_12_023801) do
+ActiveRecord::Schema.define(version: 2019_05_12_053615) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,6 +28,8 @@ ActiveRecord::Schema.define(version: 2019_05_12_023801) do
     t.bigint "shop_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "shopify_product_id"
+    t.string "shopify_store_order_id"
     t.index ["shop_id"], name: "index_orders_on_shop_id"
     t.index ["shopify_order_id"], name: "index_orders_on_shopify_order_id", unique: true
   end
