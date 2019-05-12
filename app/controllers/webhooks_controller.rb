@@ -1,7 +1,7 @@
 class WebhooksController < ShopifyApp::AuthenticatedController
   # include ShopifyApp::WebhookVerification
   #
-  # skip_before_action :verify_authenticity_token, raise: false
+  skip_before_action :verify_authenticity_token, raise: false
 
   def orders_create
     shop = ShopifyAPI::Shop.current
