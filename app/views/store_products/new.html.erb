@@ -9,4 +9,6 @@
 <h1> Associated Store Products </h1>
 <%= @store_products.each do |store_product| %>
 <%= store_product.id %>
+<td><%= link_to 'Destroy', store_product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
 <% end %>
