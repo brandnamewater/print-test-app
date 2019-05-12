@@ -11,7 +11,7 @@ class OrdersController < ShopifyApp::AuthenticatedController
     @store_product_ids = StoreProduct.pluck(:store_product_id)
 
     @store_orders = ShopifyAPI::Order.all
-    @store_products = @store_orders.where(:params => { :line_items => { :product_ids => @store_product_ids } } )
+    @store_products = @store_orders.where(:params => { :line_items => { :product_ids => @store_product_ids.to_i } } )
 
 
     # @match_store_orders = @store_orders.line_item.where(id: @store_products.each {|store_product| store_product.store_product_id})
