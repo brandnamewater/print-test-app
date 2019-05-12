@@ -15,14 +15,14 @@ class OrdersController < ShopifyApp::AuthenticatedController
     store_products = ShopifyAPI::Order.find(:all)
     store_products.each do |order|
       order.line_items.each do |li|
-        product = li.product_id
+        if li.product_id == @store_product_ids
+          @store_products = li.product_id
+        else
+        end
       end
     end
 
-    if li.product_id == @store_product_ids
-      @store_products = li.product_id
-    else
-    end 
+
 
 
     # @store_products = store_products.find(:params => { :line_items => { :pr3oduct_id => @store_product_ids } } )
