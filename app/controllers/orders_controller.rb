@@ -130,6 +130,6 @@ class OrdersController < ShopifyApp::AuthenticatedController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def order_params
-      params.fetch(:order, {})
+      params.fetch(:order, {}).permit(:shopify_order_id, :shopify_product_id)
     end
 end

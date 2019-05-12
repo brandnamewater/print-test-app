@@ -48,6 +48,24 @@
     <% end %>
   </table>
 
+  <table class="table">
+    <thead>
+      <tr>
+        <th class="center">id</th>
+        <th class="center">Product id</th>
+        <th class="center">Store Product ID</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @orders.each do |sp| %>
+        <tr>
+          <td class="center"><%= sp.id %></td>
+          <td class="center"><%= sp.shopify_product_id %></td>
+        </tr>
+    </tbody>
+    <% end %>
+  </table>
+
 
 
 <%= link_to "NP Products", new_product_path %>

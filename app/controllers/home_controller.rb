@@ -12,5 +12,7 @@ class HomeController < ShopifyApp::AuthenticatedController
     # @new_product = "https://#{@shop_session.url}/admin/api/products.json"
 
   @store_products = StoreProduct.all
+
+  @orders = Order.all
   end
 end
