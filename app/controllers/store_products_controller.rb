@@ -106,7 +106,7 @@ class StoreProductsController < ShopifyApp::AuthenticatedController
   # DELETE /store_products/1
   # DELETE /store_products/1.json
   def destroy
-    @store_product.find(params[:id])
+    # @store_product.find(params[:id])
     @store_product.destroy
     respond_to do |format|
       format.html { redirect_to '/', notice: 'Store product was successfully destroyed.' }
