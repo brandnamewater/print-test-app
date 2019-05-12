@@ -108,7 +108,7 @@ class StoreProductsController < ShopifyApp::AuthenticatedController
   def destroy
     @store_product.destroy
     respond_to do |format|
-      format.html { redirect_to store_products_url, notice: 'Store product was successfully destroyed.' }
+      format.html { redirect_to '/', notice: 'Store product was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
