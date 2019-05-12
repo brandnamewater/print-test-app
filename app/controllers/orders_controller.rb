@@ -12,16 +12,25 @@ class OrdersController < ShopifyApp::AuthenticatedController
 
     @store_orders = ShopifyAPI::Order.all
     # @store_products = ShopifyAPI::Order.where(:line_items => { :product_id => @store_product_ids } )
-    store_products = ShopifyAPI::Order.find(:all)
-    store_products.each do |order|
+    # store_products = ShopifyAPI::Order.find(:all)
+    # store_products.each do |order|
+    #   order.line_items.each do |li|
+    #     if li.product_id == @store_product_ids
+    #       @store_products = li.product_id
+    #     else
+    #     end
+    #   end
+    # end
+
+    @store_products = ShopifyAPI::Order.find(:all)
+    @store_products.each do |order|
       order.line_items.each do |li|
-        if li.product_id == @store_product_ids
-          @store_products = li.product_id
-        else
+          @store_products_ = li.product_id.where(li.product_id == 1965852786737)
         end
       end
     end
 
+    # if @store_orders.each { |order| order.line_items.each { |line| line.product_id == 1965852786737 } }
 
 
 
