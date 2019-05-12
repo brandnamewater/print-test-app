@@ -32,7 +32,7 @@ Rails.application.routes.draw do
   get 'order_old' => "home#order_old"
   get 'fulfill' => "fulfillment#fulfill"
 
-  post 'admin/api/products'
+  # post 'admin/api/products'
 
   post '/webhook/create_order', to: 'webook#create_order'
 
