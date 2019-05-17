@@ -7,7 +7,8 @@ class OrdersCreateJob < ActiveJob::Base
         variant_id = item[:variant_id]
         product_id = item[:product_id]
 
-      Order.new(shopify_product_id: product_id)
+      # Order.new(shopify_product_id: product_id)
+      Order.create(shopify_order_id: id, shopify_order_name: shipping_address.first_name)
       end
     end
   end
