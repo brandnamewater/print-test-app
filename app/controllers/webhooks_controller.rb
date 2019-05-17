@@ -1,4 +1,4 @@
-class WebhooksController < ShopifyApp::AuthenticatedController
+class WebhooksController < ShopifyApp::WebhooksController
   include ShopifyApp::WebhookVerification
   #
   skip_before_action :verify_authenticity_token, raise: false
@@ -12,7 +12,7 @@ class WebhooksController < ShopifyApp::AuthenticatedController
   end
 
   def orders_create_save
-    Order.nwq(shopify_order_id: webook[:id])
+    Order.new(shopify_order_id: webook[:id])
 
   end
 
