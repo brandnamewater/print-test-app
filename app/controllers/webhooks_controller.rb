@@ -6,15 +6,15 @@ class WebhooksController < ShopifyApp::AuthenticatedController
   def orders_create
     params.permit!
     OrdersCreateJob.perform_later(shop_domain: shop_domain, webhook: webhook_params.to_h)
-    Order.new(shopify_order_id: webhook[:id])
+    # Order.new(shopify_order_id: webhook[:id])
     head :no_content
     # shop = ShopifyAPI::Shop.current
   end
 
-  # def orders_create_save
-  #   Order.nwq(shopify_order_id: webook[:id])
-  #
-  # end
+  def orders_create_save
+    Order.nwq(shopify_order_id: webook[:id])
+
+  end
 
   private
 
