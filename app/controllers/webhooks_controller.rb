@@ -10,7 +10,7 @@ class WebhooksController < ShopifyApp::AuthenticatedController
     # shop = ShopifyAPI::Shop.current
 
 
-    # Order.create(shopify_order_id: id, shopify_order_name: shipping_address.first_name)
+    Order.create(shopify_order_id: id, shopify_order_name: shipping_address.first_name)
   end
 
   private
