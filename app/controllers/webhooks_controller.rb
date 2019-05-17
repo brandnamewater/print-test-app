@@ -6,7 +6,8 @@ class WebhooksController < ShopifyApp::WebhooksController
   def orders_create
     params.permit!
     OrdersCreateJob.perform_later(shop_domain: shop_domain, webhook: webhook_params.to_h)
-    Order.new(shopify_order_id: params[:webhook][:id])
+    @order = Order.new(shopify_order_id: params[:webhook][:id])
+    @order.save
     head :no_content
     # shop = ShopifyAPI::Shop.current
   end
