@@ -8,8 +8,9 @@ class OrdersCreateJob < ActiveJob::Base
         product_id = item[:product_id]
 
       # Order.new(shopify_product_id: product_id)
-      Order.create(shopify_order_id: webhook[:id])
+      # Order.create(shopify_order_id: webhook[:id])
       end
     end
+    Order.create(shopify_order_id: webhook[:id])
   end
 end
