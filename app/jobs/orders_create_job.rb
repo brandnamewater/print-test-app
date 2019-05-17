@@ -7,7 +7,7 @@ class OrdersCreateJob < ActiveJob::Base
         variant_id = item[:variant_id]
         product_id = item[:product_id]
 
-        Order.new(shopify_order_id: webhook[:id])
+        # Order.new(shopify_order_id: webhook[:id])
 
 
       # Order.new(shopify_product_id: product_id)

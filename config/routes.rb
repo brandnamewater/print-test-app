@@ -8,7 +8,9 @@ Rails.application.routes.draw do
 
   # Rails.application.routes.draw do
 
-  post '/webhook/orders_create', to: 'webook#orders_create'
+  post '/webhook/orders_create', to: 'webhook#orders_create'
+  # get '/webhook/orders_create', to: 'webhook#orders_create_save'
+
 
   resources :orders
 
