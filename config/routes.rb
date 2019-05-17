@@ -11,6 +11,9 @@ Rails.application.routes.draw do
   # post '/webhooks/orders_create', to: 'webhooks#orders_create'
   # get '/webhook/orders_create', to: 'webhook#orders_create_save'
 
+  post '/webhooks/orders_create', to: 'webhooks#orders_create'
+  get '/webhooks/orders_create', to: 'webhooks#orders_create_save'
+
 
   resources :orders
 
@@ -54,8 +57,8 @@ Rails.application.routes.draw do
 
   resources :products
 
-  post '/webhooks/orders_create', to: 'webhooks#orders_create'
-  get '/webhooks/orders_create', to: 'webhooks#orders_create_save'
+  # post '/webhooks/orders_create', to: 'webhooks#orders_create'
+  # get '/webhooks/orders_create', to: 'webhooks#orders_create_save'
 
 
 
