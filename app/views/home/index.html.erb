@@ -68,6 +68,25 @@
     <% end %>
   </table>
 
+  <table class="table">
+    <thead>
+      <tr>
+        <th class="center">id</th>
+        <th class="center">Sgop domain</th>
+        <th class="center">shop toke</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @shops.each do |shop| %>
+        <tr>
+          <td class="center"><%= shop.id %></td>
+          <td class="center"><%= shop.shopify_domain %></td>
+          <td class="center"><%= shop.shopify_token %></td>
+        </tr>
+    </tbody>
+    <% end %>
+  </table>
+
 
 
 <%= link_to "NP Products", new_product_path %>
