@@ -36,6 +36,8 @@ class StoreProductsController < ShopifyApp::AuthenticatedController
   # POST /store_products.json
   def create
     @products = Product.all
+    @shop = Shop.find_by(shopify_domain: shop_domain)
+
 
     shop = ShopifyAPI::Shop.current
 
@@ -73,6 +75,7 @@ class StoreProductsController < ShopifyApp::AuthenticatedController
 
     @store_product.product_id = @product.id
     # @store_product.store_product_id = @in_store_product.id
+    @store_product.shop_id = @shop.id
 
     if StoreProduct.where(store_product_id: @store_product.store_product_id).present?
       redirect_to '/'
