@@ -6,8 +6,11 @@ class OrdersUpdateJob < ActiveJob::Base
       line_items.each do |item|
         variant_id = item[:variant_id]
         product_id = item[:product_id]
+      end
+      @order = Order.where(shopify_order_id: webhook[:id])
 
-      # Order.create()
+      if @order.exists?
+        @order.update(shopify_product_id: product_id)
       end
     end
   end
