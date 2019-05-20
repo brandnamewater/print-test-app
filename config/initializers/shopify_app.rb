@@ -11,7 +11,7 @@ ShopifyApp.configure do |config|
 
   config.webhooks = [
     {topic: 'orders/create', address: 'https://polar-shelf-74894.herokuapp.com/webhooks/orders_create', format: 'json'},
-    # {topic: 'orders/update', address: 'https://polar-shelf-74894.herokuapp.com/webhooks/orders_update', format: 'json'}
+    {topic: 'orders/update', address: 'https://polar-shelf-74894.herokuapp.com/webhooks/orders_update', format: 'json'}
   ]
 
 end
