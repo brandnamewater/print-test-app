@@ -53,6 +53,7 @@
       <tr>
         <th class="center">id</th>
         <th class="center">Product id</th>
+        <th class="center">Store Order ID</th>
         <th class="center">Store Product ID</th>
       </tr>
     </thead>
@@ -60,6 +61,7 @@
       <% @orders.each do |sp| %>
         <tr>
           <td class="center"><%= sp.id %></td>
+          <td class="center"><%= sp.shopify_order_id %></td>
           <td class="center"><%= sp.shopify_product_id %></td>
         </tr>
     </tbody>
