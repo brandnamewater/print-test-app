@@ -37,7 +37,7 @@ class StoreProductsController < ShopifyApp::AuthenticatedController
   def create
     @products = Product.all
     # @shop = Shop.find_by(shopify_domain: shop_domain)
-    @shop = Shop.find_or_initialize_by(shopify_domain: session.url)
+    # @shop = Shop.find_or_initialize_by(shopify_domain: session.url)
 
 
     shop = ShopifyAPI::Shop.current
