@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_12_053615) do
+ActiveRecord::Schema.define(version: 2019_05_20_044443) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 2019_05_12_053615) do
     t.bigint "shopify_product_id"
     t.string "shopify_store_order_id"
     t.index ["shop_id"], name: "index_orders_on_shop_id"
-    t.index ["shopify_order_id"], name: "index_orders_on_shopify_order_id", unique: true
+    t.index ["shopify_order_id"], name: "index_orders_on_shopify_order_id"
   end
 
   create_table "products", force: :cascade do |t|
