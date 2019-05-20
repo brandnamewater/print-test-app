@@ -14,6 +14,6 @@ class HomeController < ShopifyApp::AuthenticatedController
   @store_products = StoreProduct.all
 
   @orders = Order.all
-  @sgops = Shop.all
+  @shops = Shop.all
   end
 end
