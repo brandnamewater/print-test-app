@@ -44,8 +44,8 @@ Rails.application.routes.draw do
 
 
   controller :sessions do
-      get 'login' => :new, :as => :login
-      post 'login' => :create, :as => :authenticate
+      get 'login_' => :new, :as => :login
+      post 'login_' => :create, :as => :authenticate
       get 'auth/shopify/callback' => :callback
       get 'logout' => :destroy, :as => :logout
   end
