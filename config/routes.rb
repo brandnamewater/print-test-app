@@ -54,7 +54,7 @@ Rails.application.routes.draw do
   resources :store_products
 
   resources :products
-  devise_for :users
+  # devise_for :users
 
 
   # post '/webhooks/orders_create', to: 'webhooks#orders_create'
