@@ -6,22 +6,20 @@ class OrdersCreateJob < ActiveJob::Base
       line_items.each do |item|
         variant_id = item[:variant_id]
         product_id = item[:product_id]
-
         # Order.new(shopify_order_id: webhook[:id])
-
       @shop = Shop.find_by(shopify_domain: shop_domain)
-
       @shop.store_products.each { |s| shop_store_products = s.store_product_id
-      if shop_store_products == product_id
-        @order = Order.new(shopify_product_id: product_id, shopify_order_id: webhook[:id])
-        @order.shop_id = @shop.id
-        @order.save!
-      end
+        if shop_store_products == product_id
+          @order = Order.new(shopify_product_id: product_id, shopify_order_id: webhook[:id])
+          @order.shop_id = @shop.id
+          @order.save!
+        end
       }
 
-      # Order.create(shopify_order_id: webhook[:id])
+      @shop_store_products = @shop.store_products.where()
+
+
       end
     end
-    # Order.new(shopify_order_id: webhook[:id])
   end
 end

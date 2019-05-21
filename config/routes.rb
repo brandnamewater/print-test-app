@@ -17,7 +17,6 @@ Rails.application.routes.draw do
 
   # resources :orders
 
-  mount ShopifyApp::Engine, at: '/'
 
   # post 'fulfillment/fulfil_order'
   get 'fulfillment/fulfil_order'
@@ -61,5 +60,6 @@ Rails.application.routes.draw do
   # get '/webhooks/orders_create', to: 'webhooks#orders_create_save'
 
 
+  mount ShopifyApp::Engine, at: '/'
 
 end
