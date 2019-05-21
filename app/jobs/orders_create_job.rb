@@ -11,7 +11,8 @@ class OrdersCreateJob < ActiveJob::Base
 
       @shop = Shop.find_by(shopify_domain: shop_domain)
 
-      if @shop.store_products.any? { |s| s.store_product_id} == product_id
+      @shop.store_products.each { |s| shop_store_products = s.store_product_id } 
+      if shop_store_products == product_id
         @order = Order.new(shopify_product_id: product_id, shopify_order_id: webhook[:id])
         @order.shop_id = @shop.id
         @order.save!
