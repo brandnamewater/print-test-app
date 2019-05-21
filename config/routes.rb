@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  devise_for :users
 #   root :to => 'home#orders'
 #   mount ShopifyApp::Engine, at: '/'
 #
@@ -55,6 +54,8 @@ Rails.application.routes.draw do
   resources :store_products
 
   resources :products
+  devise_for :users
+
 
   # post '/webhooks/orders_create', to: 'webhooks#orders_create'
   # get '/webhooks/orders_create', to: 'webhooks#orders_create_save'
